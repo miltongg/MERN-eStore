@@ -138,7 +138,6 @@ export const ProductScreen = () => {
                           </Card>
                       </Col>
                   </Row>
-                  {product.name}
     </div>
   )
 }
