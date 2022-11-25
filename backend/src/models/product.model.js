@@ -44,6 +44,11 @@ const productSchema = new Schema({
         required: true
     },
 
+    countStock: {
+        type: Number,
+        required: true
+    },
+
     numReviews: {
         type: Number,
         required: true
