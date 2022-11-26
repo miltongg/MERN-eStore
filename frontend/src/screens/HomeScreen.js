@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer } from 'react'
-import logger from 'use-reducer-logger';
 import {Col, Row} from "react-bootstrap";
 import {Product} from "../components/Product";
 import {Helmet} from "react-helmet-async";

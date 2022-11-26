@@ -6,9 +6,9 @@ import User from "../models/user.model.js";
 const router = Router();
 
 router.get('/seed', async (req, res) => {
-    await Product.remove({})
+    await Product.deleteMany({})
     const createProducts = await Product.insertMany(data.products);
-    await User.remove({})
+    await User.deleteMany({})
     const createUsers = await User.insertMany(data.users)
     res.send({ createProducts, createUsers });
 });
