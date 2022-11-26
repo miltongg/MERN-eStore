@@ -42,7 +42,6 @@ export const Product = (props) => {
                 {product.countStock === 0 ? <Button variant="light" disabled>Out of stock</Button> :
                 <Button onClick={() => addToCartHandler(product)}>Add to cart</Button>
                 }
-
             </Card.Body>
         </Card>
     );
