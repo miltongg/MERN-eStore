@@ -1,31 +1,15 @@
 import {Router} from 'express';
 import Product from '../models/product.model.js'
+import getAllProducts from "../controllers/getAllProducts.controller.js";
+import getProductBySlug from "../controllers/getProductBySlug.controller.js";
+import getProductById from "../controllers/getProductById.controller.js";
 
 const router = Router();
 
-router.get('/products', async (req, res) => {
-    const products = await Product.find();
-    res.send(products);
-});
+router.get('/products', getAllProducts);
 
-router.get('/products/slug/:slug', async (req, res) => {
-    const product = await Product.findOne({slug: req.params.slug});
+router.get('/products/slug/:slug', getProductBySlug);
 
-    if (product) {
-        res.send(product)
-    } else {
-        res.status(404).send({message: "Product not found"})
-    }
-})
-
-router.get('/products/:id', async (req, res) => {
-    const product = await Product.findById(req.params.id);
-
-    if (product) {
-        res.send(product)
-    } else {
-        res.status(404).send({message: "Product not found"})
-    }
-})
+router.get('/products/:id', getProductById);
 
 export default router;

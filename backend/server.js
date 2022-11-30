@@ -2,9 +2,10 @@ import express from 'express';
 import data from './src/data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import seedRouter from "./src/routes/seed.routes.js";
+import seedRoutes from "./src/routes/seed.routes.js";
 import productRoutes from "./src/routes/product.routes.js";
 import userRoutes from "./src/routes/user.routes.js";
+import orderRoutes from "./src/routes/order.routes.js";
 
 dotenv.config();
 
@@ -19,9 +20,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/api/', seedRouter);
+app.use('/api/', seedRoutes);
 app.use('/api/', productRoutes);
 app.use('/api/', userRoutes)
+app.use('/api/', orderRoutes)
 
 app.use((error, req, res, next) => {
     res.status(500).send({ message: error.statusMessage })

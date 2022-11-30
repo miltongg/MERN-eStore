@@ -12,6 +12,8 @@ import { SigninScreen } from "./screens/SinginScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import { SignupScreen } from "./screens/SignupScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 function App() {
 
@@ -63,7 +65,7 @@ function App() {
                         Sign Out
                       </Link>
                     </NavDropdown> :
-                    <Link className="nav-link" to="/signin">
+                    <Link className="nav-link" to="/signinController">
                       Sign In
                     </Link>}
               </Nav>
@@ -76,10 +78,12 @@ function App() {
               <Route path="/" element={<HomeScreen />} />
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
-              <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/signinController" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/payment" element={<PaymentMethodScreen />} />
+              <Route path="/placeorder" element={<PlaceOrderScreen />} />
+              <Route path="/order/:id" element={<OrderScreen />} />
             </Routes>
           </Container>
         </main>

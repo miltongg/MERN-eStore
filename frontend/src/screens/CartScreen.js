@@ -31,7 +31,7 @@ export const CartScreen = () => {
     }
 
     const checkoutHandler = () => {
-        navigate('/signin?redirect=/shipping')
+        navigate('/signinController?redirect=/shipping')
     }
 
     console.log(cartItems)

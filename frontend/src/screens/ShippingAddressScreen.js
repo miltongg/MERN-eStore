@@ -22,7 +22,7 @@ export default function ShippingAddressScreen() {
 
     useEffect(() => {
         if(!userInfo) {
-            navigate('/signin?redirect=/shipping')
+            navigate('/signinController?redirect=/shipping')
         }
     }, [userInfo, navigate])
 
