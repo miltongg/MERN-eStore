@@ -2,12 +2,8 @@ import Product from "../models/product.model.js";
 
 export default async function getProductById(req, res) {
 
-    console.log('headers', req.headers);
-    console.log('body', req.body);
-    console.log('params', req.params);
-
     try {
-        const product = await Product.findOne({slug: req.params.id});
+        const product = await Product.findOne({_id: req.params.id});
 
         if (product) {
             res.send(product)
