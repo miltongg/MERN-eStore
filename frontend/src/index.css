@@ -19,7 +19,7 @@ main {
   color: #ffc000;
 }
 
-.btn-primary {
+.btn-primary, .btn-outline-primary {
   background-color: red;
   border-color: red;
 }
@@ -69,4 +69,35 @@ main {
 .checkout-steps > div.active {
   border-bottom: 0.2rem solid salmon;
   color: salmon;
+}
+
+/* sidebar 100901*/
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #404040;
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+
+.active-cont {
+  margin-left: 240px;
+}
+
+.active-nav {
+  left: 0;
+}
+
+.search-icon-color {
+  color: white;
 }

@@ -2,9 +2,6 @@ import Product from "../models/product.model.js";
 
 export default async function getAllProducts(req, res) {
 
-    console.log('headers', req.headers);
-    console.log('body', req.body);
-
     try {
         const products = await Product.find({});
 
