@@ -101,3 +101,7 @@ main {
 .search-icon-color {
   color: white;
 }
+
+.text-red {
+  color: red;
+}

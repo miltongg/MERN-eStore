@@ -111,6 +111,7 @@ export default function SearchScreen() {
         const fetchCategories = async () => {
             try {
                 const { data } = await axios.get(`/api/products/categories`);
+                setCategories(data)
             } catch (error) {
                 toast.error(getError(error))
             }
@@ -185,11 +186,11 @@ export default function SearchScreen() {
                         ))}
                     </ul>
                 </div>
-                <div>
+                <div className="align-content-center">
                     <h3>Avg. Customer Review</h3>
                     <ul>
                         {ratings.map((rat) => (
-                            <li key={rat.name}>
+                            <li key={rat.name} className="list-unstyled mb-2">
                                 <Link
                                     to={getFilterUrl({rating: rat.rating})}
                                     className={rat.rating === rating ? 'fw-bold' : ''}
@@ -198,10 +199,10 @@ export default function SearchScreen() {
                                 </Link>
                             </li>
                         ))}
-                        <li>
+                        <li className="list-unstyled">
                             <Link
                                 to={getFilterUrl({ rating: 'all'})}
-                                className={rating === 'all' ? 'fw-bold' : ''}
+                                className={rating === 'all' ? 'text-red' : ''}
                             >
                                 <Rating caption={' & up'} rating={0} />
                             </Link>
@@ -226,6 +227,7 @@ export default function SearchScreen() {
                                         {query !== 'all' || category !== 'all' || rating !== 'all' || price !== 'all' ? 
                                             <Button
                                                 variant='light'
+                                                className='ms-1'
                                                 onClick={() => navigate('/search')}
                                             >
                                                 <i className='fas fa-times-circle'></i>

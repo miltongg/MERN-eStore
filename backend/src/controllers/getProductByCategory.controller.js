@@ -1,6 +1,6 @@
 import Product from '../models/product.model.js'
 
-export default async function getProductByCategory(req, res) {
+export default async function getProductByCategoryController(req, res) {
     
     try {
 
